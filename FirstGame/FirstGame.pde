@@ -1,5 +1,8 @@
+//currentImage = Turtle
 PImage currentImage;
+//anotherImage = Bunny
 PImage anotherImage;
+//Setting the X and Y int's for the Turtle and the Bunny
 int currentImageX = 150;
 int anotherImageX = 700;
 int currentImageY = 0;
