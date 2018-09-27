@@ -2,7 +2,7 @@
 PImage currentImage;
 //anotherImage = Bunny
 PImage anotherImage;
-//Setting the X and Y int's for the Turtle and the Bunny
+//X and Y locations for the Turtle and the Bunny
 int currentImageX = 150;
 int anotherImageX = 700;
 int currentImageY = 0;
@@ -41,6 +41,21 @@ void draw()
     text("Congradulations Bunny, You Won!", 500, 500);
   }
   
+  //If the Turtle our the Bunny cross the finish line a reset button shoud show up
+  if (currentImageY >= 1000 || anotherImageY >= 1000)
+  {
+    //creating the rectangle for the reset button
+    rectMode (CENTER);
+    textAlign (CENTER);
+    fill (0);
+    stroke (255);
+    rect (500, 950, 200, 100);
+   
+    //creating the text for the reset button
+    fill (255);
+    text ("Reset", 500, 950);
+  }
+    
   //This code allows the pictures to move down when you press the assigned key
   image(currentImage, currentImageX, currentImageY, 100, 100);
 
@@ -62,4 +77,14 @@ void keyPressed()
     anotherImageY = anotherImageY + 10;
   }
 }
-    
+
+void mouseClicked()
+{
+  
+  //If the button is pressed the Turtle and Bunny reset
+  if (mouseX > 400 && mouseX < 600 && mouseY > 900 && mouseY < 1000)
+  {
+    currentImageY = 10;
+    anotherImageY = 10;
+  }
+}
